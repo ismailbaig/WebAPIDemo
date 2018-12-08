@@ -9,6 +9,7 @@ namespace MS.MVCDemo.Interface
 {
     public interface IRepository
     {
-        Task<IList<StudentViewModel>> GetAllStudents();
+        //Task<IList<StudentViewModel>> GetAllStudents();
+        IList<StudentViewModel> GetAllStudents();
     }
 }

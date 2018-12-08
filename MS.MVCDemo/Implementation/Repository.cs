@@ -10,7 +10,8 @@ namespace MS.MVCDemo.Implementation
 {
     public class Repository : IRepository
     {
-        public async Task<IList<StudentViewModel>> GetAllStudents()
+        //public async Task<IList<StudentViewModel>> GetAllStudents()
+        public IList<StudentViewModel> GetAllStudents()
         {
             IList<StudentViewModel> studentVM = null;
 

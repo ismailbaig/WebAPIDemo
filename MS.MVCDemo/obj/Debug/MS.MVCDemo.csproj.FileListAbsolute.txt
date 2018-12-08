@@ -79,4 +79,3 @@ D:\ismail\InterviewPreparation\MS.MVCDemo\MS.MVCDemo\bin\Ninject.Extensions.Chil
 D:\ismail\InterviewPreparation\MS.MVCDemo\MS.MVCDemo\bin\WebApiContrib.IoC.Ninject.dll
 D:\ismail\InterviewPreparation\MS.MVCDemo\MS.MVCDemo\bin\Ninject.xml
 D:\ismail\InterviewPreparation\MS.MVCDemo\MS.MVCDemo\bin\Ninject.Extensions.ChildKernel.xml
-D:\ismail\InterviewPreparation\MS.MVCDemo\MS.MVCDemo\obj\Debug\MS.MVCDemo.csprojResolveAssemblyReference.cache

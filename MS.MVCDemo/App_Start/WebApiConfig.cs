@@ -13,6 +13,7 @@ using MS.MVCDemo.Interface;
 using MS.MVCDemo.Implementation;
 using Ninject.Activation;
 using System.Web.Http.Dependencies;
+using Newtonsoft.Json;
 
 namespace MS.MVCDemo
 {
@@ -39,7 +40,7 @@ namespace MS.MVCDemo
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
-            config.EnableSystemDiagnosticsTracing();
+            //config.EnableSystemDiagnosticsTracing();
             config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Formatting.Indented;

@@ -26,7 +26,7 @@ namespace MS.MVCDemo.Controllers
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = result.Content.ReadAsAsync<StudentViewModel[]>();
-                    //readTask.Wait();
+                    readTask.Wait();
 
                     students = readTask.Result;
                 }
