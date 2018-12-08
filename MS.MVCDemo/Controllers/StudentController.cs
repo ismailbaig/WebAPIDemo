@@ -41,5 +41,33 @@ namespace MS.MVCDemo.Controllers
             
             return View(students);
         }
+
+        public ActionResult create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult create(StudentViewModel student)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:60909/api/studentapi/postnewstudent");
+
+                //HTTP POST
+                var postTask = client.PostAsJsonAsync<StudentViewModel>("student", student);
+                postTask.Wait();
+
+                var result = postTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+
+            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+
+            return View(student);
+        }
     }
 }
