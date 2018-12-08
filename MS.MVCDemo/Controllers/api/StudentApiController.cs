@@ -5,26 +5,40 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using MS.MVCDemo.Models;
+using MS.MVCDemo.Interface;
+using MS.MVCDemo.Implementation;
+using System.Threading.Tasks;
 
 namespace MS.MVCDemo.Controllers.api
 {
     public class StudentApiController : ApiController
     {
-        public IHttpActionResult GetStudents()
+        private IRepository _iRepo = null;
+
+
+        public StudentApiController(IRepository iRepo)
         {
-            IList<StudentViewModel> studentVM = null;
+            _iRepo = iRepo;
+        }
 
-            studentVM = new List<StudentViewModel>();
+        //public async IHttpActionResult GetStudents()
+        //public async Task<HttpResponseMessage> GetStudents()
+        public HttpResponseMessage GetStudents()
+        {
+            //IList<StudentViewModel> studentVM = null;
 
-            studentVM.Add(new StudentViewModel { Name = "Ismail", Address="BTM" });
-            studentVM.Add(new StudentViewModel { Name = "Baig2", Address="BTM" });
+            //studentVM = new List<StudentViewModel>();
 
-            if (studentVM.Count == 0)
-            {
-                return NotFound();
-            }
+            //studentVM = await _iRepo.GetAllStudents();
 
-            return Ok(studentVM);
+            //if (studentVM.Count == 0)
+            //{
+            //    return NotFound();
+            //}
+
+            //return Ok(studentVM);
+
+            return Request.CreateResponse(HttpStatusCode.OK, _iRepo.GetAllStudents());
         }
 
         //Get action methods of the previous section
